@@ -11,7 +11,7 @@ public class Grafo {
 	
 	
 	/**
-	 * Constructor de Grafo
+	 * Constructor de Grafos
 	 * @param cantidad de vertices del grafo a crear
 	 */
 	public Grafo(int vertices) {
