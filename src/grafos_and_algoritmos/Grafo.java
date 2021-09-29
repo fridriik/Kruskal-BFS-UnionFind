@@ -78,7 +78,7 @@ public class Grafo {
 	
 	
 	// Verifica que no se introduzcan loops
-	public static void verificarDistintos(int s, int t) {
+	public void verificarDistintos(int s, int t) {
 		if (s == t) {
 			throw new IllegalArgumentException("No se permiten loops: (" + s + ", " + t + ")" );
 		}
@@ -86,20 +86,12 @@ public class Grafo {
 		
 	
 	// Verifica que sea un vertice valido
-	public static void verificarVertice(int s, Grafo grafo) {
+	public void verificarVertice(int s, Grafo grafo) {
 		if (s < 0) {
 			throw new IllegalArgumentException("El vertice no puede ser negativo: " + s);
 		}
 		if (s >= grafo.tamanio()) {
 			throw new IllegalArgumentException("Los vertices deben estar entre 0 y |V|-1: " + s);
-		}
-	}
-	
-	
-	// Este m�todo verifica que no se haya ingresado un grafo null.
-	public static void verificarNull(Grafo grafo) {
-		if (grafo == null) {
-				throw new IllegalArgumentException("Grafo no inicializado");
 		}
 	}
 }
