@@ -1,6 +1,5 @@
 package grafos_and_algoritmos;
 
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -8,24 +7,24 @@ import java.util.Set;
 public class BFS {
 	
 	private static ArrayList<Integer> L;
-	
 	private static boolean[] marcados;
 	
 	
-	public static boolean  esConexo(Grafo g) 
-	{
-		if(g == null)
-			throw new IllegalArgumentException("Se ingresó un grafo null");
-		
-		if(g.tamanio() == 0)
-			return true;	
-		
-		return alcanzables(g,0).size() == g.tamanio();
+	public static boolean esConexo(Grafo g) {
+		if(g == null) {
+			throw new IllegalArgumentException("Se ingreso un grafo null");
+		}
+		if(g.tamanio() == 0) {
+			return true;
+		}
+		if(alcanzables(g, 0).size() == g.tamanio()) {
+			return true;
+		}
+		return alcanzables(g, 0).size() == g.tamanio();
 	}
 
 
-	public static Set<Integer> alcanzables(Grafo g, int origen) 
-	{
+	public static Set<Integer> alcanzables(Grafo g, int origen) {
 		Set<Integer> ret = new HashSet<Integer>();		
 		inicializar(g, origen);
 		
@@ -37,18 +36,16 @@ public class BFS {
 			agregarVecinosPendientes(g, i);
 			L.remove(0);
 		}
-		
 		return ret;
 	}
 
 
 	private static void agregarVecinosPendientes(Grafo g, int i) {
-		for(int vertice : g.vecinos(i))
-		{
-			if(marcados[vertice] == false && L.contains(vertice) == false) 
+		for(int vertice : g.vecinos(i)) {
+			if(marcados[vertice] == false && L.contains(vertice) == false) {
 				L.add(vertice);
+			}
 		}
-		
 	}
 
 
@@ -57,5 +54,4 @@ public class BFS {
 		L.add(origen);
 		marcados = new boolean[g.tamanio()];		
 	}
-
 }

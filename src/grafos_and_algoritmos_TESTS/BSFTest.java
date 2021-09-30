@@ -1,21 +1,15 @@
 package grafos_and_algoritmos_TESTS;
+
 import static org.junit.Assert.*;
-
 import java.util.Set;
-
-import org.junit.Assert;
 import org.junit.Test;
-
 import grafos_and_algoritmos.BFS;
 import grafos_and_algoritmos.Grafo;
 
 public class BSFTest {
 	
-	
-
 	@Test (expected = IllegalArgumentException.class)
-	public void testNull() 
-	{
+	public void testNull() {
 		BFS.esConexo(null);
 	}
 	
@@ -26,13 +20,12 @@ public class BSFTest {
 	}
 	
 	@Test
-	public void alcanzablesTest() 
-	{
+	public void alcanzablesTest() {
 		Grafo g = inicializarGrafo();
 		Set<Integer> alcanzables = BFS.alcanzables(g, 0);
 		int[] esperados = {0, 1, 2, 3};
 		
-		Assert.iguales(esperados, alcanzables);
+		grafos_and_algoritmos_TESTS.Assert.iguales(esperados, alcanzables);
 	}
 	
 	@Test
@@ -49,14 +42,12 @@ public class BSFTest {
 		assertTrue(BFS.esConexo(g));	
 	}
 	
-	
 
-	private Grafo inicializarGrafo() 
-	{
+	private Grafo inicializarGrafo() {
 		Grafo grafo = new Grafo(5);
-		grafo.agregarArista(0,1, 0);
-		grafo.agregarArista(0,2, 0);
-		grafo.agregarArista(2,3, 0);
+		grafo.agregarArista(0, 1, 0);
+		grafo.agregarArista(0, 2, 0);
+		grafo.agregarArista(2, 3, 0);
 		
 		return grafo;
 	}

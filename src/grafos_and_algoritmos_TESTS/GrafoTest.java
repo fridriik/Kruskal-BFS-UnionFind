@@ -3,10 +3,10 @@ package grafos_and_algoritmos_TESTS;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 
-class GrafoTest {
+public class GrafoTest {
 
 	@Test
-	void test() {
+	public void test() {
 		fail("Not yet implemented");
 	}
 

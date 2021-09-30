@@ -37,30 +37,26 @@ public class Arista {
 		this.peso = peso;
 	}
 
-	
-	//Hashcode y equals entre vertices
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + vertice_S;
-		result = prime * result + vertice_T;
-		return result;
-	}
 
+	//Equals entre aristas
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()) {
 			return false;
+		}
 		Arista other = (Arista) obj;
-		if (vertice_S != other.vertice_S)
+		if ((vertice_S != other.vertice_S) && (vertice_S != other.vertice_T)) {
 			return false;
-		if (vertice_T != other.vertice_T)
+		}
+		if ((vertice_T != other.vertice_T) && (vertice_T != other.vertice_S)) {
 			return false;
+		}
 		return true;
-	}
+	}		
 }
