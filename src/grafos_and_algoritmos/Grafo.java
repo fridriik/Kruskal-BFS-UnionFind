@@ -35,6 +35,21 @@ public class Grafo {
 //	}
 
 
+	public ArrayList<Set<Integer>> getVecinos() {
+		return vecinos;
+	}
+
+
+//	public void setVecinos(ArrayList<Set<Integer>> vecinos) {
+//		this.vecinos = vecinos;
+//	}
+
+
+//	public void setAristas(ArrayList<Arista> aristas) {
+//		this.aristas = aristas;
+//	}
+
+
 	public void agregarArista (int s, int t, int peso) {
 		verificarVertice(s, this);
 		verificarVertice(t, this);
