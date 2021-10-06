@@ -25,6 +25,12 @@ public class Arista {
 		return vertice_S;
 	}
 
+	@Override
+	public String toString() {
+		return "Arista [vertice_S=" + vertice_S + ", vertice_T=" + vertice_T + ", peso=" + peso + "]";
+	}
+
+
 	public int getVertice_T() {
 		return vertice_T;
 	}

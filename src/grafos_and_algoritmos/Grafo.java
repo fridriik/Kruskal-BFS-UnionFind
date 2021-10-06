@@ -110,6 +110,12 @@ public class Grafo {
 	}
 		
 	
+	@Override
+	public String toString() {
+		return "Grafo [vecinos=" + vecinos + ", aristas=" + aristas + "]";
+	}
+
+
 	// Verifica que sea un vertice valido
 	public void verificarVertice(int s, Grafo grafo) {
 		if (s < 0) {
