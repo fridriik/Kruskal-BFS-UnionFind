@@ -13,23 +13,17 @@ public class Arista {
 	 * @param vertice destino
 	 * @param peso o distancia entre vertices
 	 */
-	public Arista(int vertice_S, int vertice_T, int peso) {
+	public Arista(int vertice_S, int vertice_T, float peso) {
 		this.vertice_S = vertice_S;
 		this.vertice_T = vertice_T;
-		this.peso = peso;
+		this.peso = (int) peso;
 	}
-
+	
 	
 	//Getters y set de peso
 	public int getVertice_S() {
 		return vertice_S;
 	}
-
-	@Override
-	public String toString() {
-		return "Arista [vertice_S=" + vertice_S + ", vertice_T=" + vertice_T + ", peso=" + peso + "]";
-	}
-
 
 	public int getVertice_T() {
 		return vertice_T;
