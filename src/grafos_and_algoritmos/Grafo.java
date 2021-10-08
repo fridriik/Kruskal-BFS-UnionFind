@@ -100,6 +100,14 @@ public class Grafo {
 		verificarVertice(t, this);
 		return vecinos.get(s).contains(t);
 	}
+	
+	
+	public int pesoTotal() {
+		int cont = 0;
+		for (Arista arista : aristas)
+			cont += arista.getPeso();
+		return cont;
+	}
 
 	
 	public Set<Integer> vecinos(int s){

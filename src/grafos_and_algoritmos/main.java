@@ -13,7 +13,7 @@ public class main {
 		
 //		System.out.println(a.toString());
 //		
-		Kruskal.kruskal(a);
+		KruskalBFS.kruskal(a);
 //		
 		System.out.println(a.toString());
 	}

@@ -1,7 +1,5 @@
 package grafos_and_algoritmos;
 
-import static org.hamcrest.CoreMatchers.instanceOf;
-
 import java.util.Random;
 
 public class GrafoAleatorio {

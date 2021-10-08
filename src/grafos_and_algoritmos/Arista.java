@@ -59,4 +59,11 @@ public class Arista {
 		}
 		return true;
 	}		
+	
+	
+	// toString, devuelve un String del tipo "(vertice1, vertice2, peso)"
+		public String toString() {
+			String sb = "(" + vertice_S + ", " + vertice_T + ", " + peso + ")";
+			return sb;
+		}
 }

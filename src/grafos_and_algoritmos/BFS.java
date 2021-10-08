@@ -47,6 +47,12 @@ public class BFS {
 			}
 		}
 	}
+	
+	
+	public static boolean circuito(Grafo g , int origen ,int destino) {
+		Set<Integer> alcanzables =  BFS.alcanzables(g, origen);
+		return alcanzables.contains(destino);
+	}
 
 
 	private static void inicializar(Grafo g, int origen) {
