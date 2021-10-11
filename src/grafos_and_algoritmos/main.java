@@ -11,11 +11,11 @@ public class main {
 		a.agregarArista(1, 3, 9);
 		a.agregarArista(3, 2, 3);
 		
-//		System.out.println(a.toString());
+		System.out.println(a.toString());
 //		
 		KruskalBFS.kruskal(a);
 //		
-		System.out.println(a.toString());
+//		System.out.println(a.toString());
 	}
 
 }

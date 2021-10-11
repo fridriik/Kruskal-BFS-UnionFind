@@ -36,6 +36,12 @@ public class Grafo {
 //	}
 
 
+	@Override
+	public String toString() {
+		return "Grafo [vecinos=" + vecinos + ", aristas=" + aristas + "]";
+	}
+
+
 	public ArrayList<Set<Integer>> getVecinos() {
 		return vecinos;
 	}
