@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import grafos_and_algoritmos.Arista;
 import grafos_and_algoritmos.Grafo;
-import grafos_and_algoritmos.KruskalBFS;
+import grafos_and_algoritmos.Kruskal;
 
 public class KruskalBFSTest {
 
@@ -28,7 +28,7 @@ public class KruskalBFSTest {
 			grafo.agregarArista(2, 8, 3);
 			grafo.agregarArista(6, 8, 5);
 			
-			Grafo arbol = KruskalBFS.kruskal(grafo);
+			Grafo arbol = Kruskal.kruskalBFS(grafo);
 			
 			//En un arbol la cantidad de aristas es igual a la cantidad de vertices -1.
 			assertEquals (arbol.getAristas().size(), grafo.tamanio() - 1);	
@@ -52,7 +52,10 @@ public class KruskalBFSTest {
 			grafo.agregarArista(2, 8, 3);
 			grafo.agregarArista(6, 8, 5);
 			
-			Grafo arbol = KruskalBFS.kruskal(grafo);
+			Grafo arbol = Kruskal.kruskalBFS(grafo);
+			
+			for(Arista arista : arbol.getAristas())
+				System.out.println(arista);
 			
 			//En un arbol la cantidad de aristas es igual a la cantidad de vertices -1.
 			assertEquals (arbol.pesoTotal(), 38);	
@@ -73,10 +76,10 @@ public class KruskalBFSTest {
 			grafo.agregarArista(2, 4, 12);
 			grafo.agregarArista(3, 4, 33);
 			
-			Grafo arbol = KruskalBFS.kruskal(grafo);
+			Grafo arbol = Kruskal.kruskalBFS(grafo);
 			
-			for(Arista arista : arbol.getAristas())
-				System.out.println(arista);
+//			for(Arista arista : arbol.getAristas())
+//				System.out.println(arista);
 			
 			assertEquals (arbol.getAristas().size(), grafo.tamanio() - 1);
 		}
@@ -90,28 +93,28 @@ public class KruskalBFSTest {
 			grafo.agregarArista(1, 2, 22);
 			grafo.agregarArista(3, 4, 12);
 			
-			KruskalBFS.kruskal(grafo);
+			Kruskal.kruskalBFS(grafo);
 		}
 		
 		@Test(expected = IllegalArgumentException.class)
 		public void arbolGeneradorSobreGrafoNull()
 		{
 			Grafo grafo = null;
-			KruskalBFS.kruskal(grafo);
+			Kruskal.kruskalBFS(grafo);
 		}
 		
 		@Test
 		public void ArbolGeneradorSobreGrafoVacio()
 		{
 		Grafo grafo = new Grafo (0);
-		KruskalBFS.kruskal(grafo);
+		Kruskal.kruskalBFS(grafo);
 		}
 		
 		@Test
 		public void ArbolGeneradorSobreGrafoTamanio1()
 		{
 			Grafo grafo = new Grafo (1);
-			KruskalBFS.kruskal(grafo);
+			Kruskal.kruskalBFS(grafo);
 		}
 		
 		@Test 
@@ -120,7 +123,7 @@ public class KruskalBFSTest {
 			Grafo grafo = new Grafo (2);
 			grafo.agregarArista(0, 1, 1);
 			
-			Grafo arbol = KruskalBFS.kruskal(grafo);
+			Grafo arbol = Kruskal.kruskalBFS(grafo);
 			
 			assertEquals (arbol.getAristas().size(), grafo.tamanio()-1);
 		}

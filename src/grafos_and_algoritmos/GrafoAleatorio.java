@@ -10,10 +10,6 @@ public class GrafoAleatorio {
 			throw new IllegalArgumentException("Se ingresaron numeros negativos");
 		}
 		
-		if(aristas > (vertices*(vertices - 1))/2) {
-			throw new IllegalArgumentException("La maxima cantidad de aristas es (n*n-1)/2");
-		}
-		
 		Grafo aux = new Grafo(vertices);
 		Random random = new Random();
 		int i = 0; 
