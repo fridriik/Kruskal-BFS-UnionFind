@@ -58,24 +58,19 @@ public class Kruskal {
 		return auxi;
 	}
 	
-	private static Arista elegirArista(ArrayList<Arista> aristaList, UnionFind uf)
-	{
+	private static Arista elegirArista(ArrayList<Arista> aristaList, UnionFind uf) {
 		boolean flag = false;
-		Arista ret = aristaList.get(0);
-		
-		while (flag == false)
-		{
-			ret = seleccionarMenorUF(aristaList);
-			if (uf.find(ret.getVertice_S(), ret.getVertice_T()))
-			{
-				aristaList.remove(ret);
+		Arista auxi = aristaList.get(0);
+		while (flag == false) {
+			auxi = seleccionarMenorUF(aristaList);
+			if (uf.find(auxi.getVertice_S(), auxi.getVertice_T())) {
+				aristaList.remove(auxi);
 			} 
-			else
-			{
+			else {
 				flag = true;
-				aristaList.remove(ret);
+				aristaList.remove(auxi);
 			}		
 		}
-		return ret;
+		return auxi;
 	}
 }

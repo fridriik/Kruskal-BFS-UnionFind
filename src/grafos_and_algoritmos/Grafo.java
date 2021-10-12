@@ -31,12 +31,6 @@ public class Grafo {
 		return aristas;
 	}
 
-
-//	public void setAristas(ArrayList<Arista> aristas) {
-//		this.aristas = aristas;
-//	}
-
-
 	@Override
 	public String toString() {
 		return "Grafo [vecinos=" + vecinos + ", aristas=" + aristas + "]";
@@ -46,16 +40,6 @@ public class Grafo {
 	public ArrayList<Set<Integer>> getVecinos() {
 		return vecinos;
 	}
-
-
-//	public void setVecinos(ArrayList<Set<Integer>> vecinos) {
-//		this.vecinos = vecinos;
-//	}
-
-
-//	public void setAristas(ArrayList<Arista> aristas) {
-//		this.aristas = aristas;
-//	}
 
 
 	public void agregarArista (int s, int t, int peso) {
