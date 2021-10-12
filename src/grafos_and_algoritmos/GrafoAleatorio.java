@@ -9,19 +9,23 @@ public class GrafoAleatorio {
 		if (vertices < 0 || aristas < 0) {
 			throw new IllegalArgumentException("Se ingresaron numeros negativos");
 		}
-		
 		Grafo aux = new Grafo(vertices);
 		Random random = new Random();
-		int i = 0; 
-		while (i < aristas) {
-			int vertice_S = random.nextInt(vertices);
-			int vertice_T = vertice_S;
-			while (vertice_T == vertice_S || aux.existeArista(vertice_S, vertice_T)) {
-				vertice_T = random.nextInt(vertices);
+		for (int i = 0; i < vertices; i++) {
+			for (int j = i + 1; j < vertices; j++) {
+				aux.agregarArista(i, j, random.nextFloat());
 			}
-			aux.agregarArista(vertice_S, vertice_T, random.nextFloat());
-			i++;
 		}
+//		int i = 0; 
+//		while (i < aristas) {
+//			int vertice_S = random.nextInt(vertices);
+//			int vertice_T = vertice_S;
+//			while (vertice_T == vertice_S || aux.existeArista(vertice_S, vertice_T)) {
+//				vertice_T = random.nextInt(vertices);
+//			}
+//			aux.agregarArista(vertice_S, vertice_T, random.nextFloat());
+//			i++;
+//		}
 		return aux;
 	}
 }
