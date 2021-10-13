@@ -43,11 +43,13 @@ public class Principal {
 	
 	public static void main (String[]args) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Tiempo de algoritmo de Kruskal usando BFS y grafos aleatorios: ");
+		sb.append("\n                                                                                                    \n");
+		sb.append("Tiempo en milisegundos de algoritmo de Kruskal usando BFS y grafo aleatorio: ");
 		sb.append(medicionDeTiempoKruskalBFS());
-		sb.append("\n");
-		sb.append("Tiempo de algoritmo de Kruskal usando Union-Find y grafos aleatorios: ");
+		sb.append("\n----------------------------------------------------------------------------------------------------\n");
+		sb.append("Tiempo en milisegundos de algoritmo de Kruskal usando estructura Union-Find y grafo aleatorio: ");
 		sb.append(medicionDeTiempoKruskalUF());
+		sb.append("\n                                                                                                    \n");
 		System.out.println(sb);
 	}
 	
