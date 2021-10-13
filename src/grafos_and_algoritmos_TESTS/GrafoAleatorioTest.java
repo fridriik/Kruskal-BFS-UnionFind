@@ -7,12 +7,14 @@ import grafos_and_algoritmos.GrafoAleatorio;
 
 public class GrafoAleatorioTest {
 	
+	
 	@Test
 	public void testGrafoAleatorio() {
 		Grafo grafo = GrafoAleatorio.nuevoGrafoAleatorio(5, 10);
 		assertEquals(grafo.tamanio(), 5);
 		assertEquals(grafo.getAristas().size(), 10);		
 	}
+	
 	
 	@Test
 	public void testGrafpAleatorioCon1Vertice() {
@@ -21,12 +23,14 @@ public class GrafoAleatorioTest {
 		assertEquals(grafo.getAristas().size(), 0);		
 	}
 	
+	
 	@Test
 	public void testGrafoAleatorioCon2Vertices() {
 		Grafo grafo = GrafoAleatorio.nuevoGrafoAleatorio(2, 1);
 		assertEquals(grafo.tamanio(), 2);
 		assertEquals(grafo.getAristas().size(), 1);		
 	}
+	
 	
 	@Test
 	public void testGrafoAleatorioSinVertices() {
@@ -35,11 +39,13 @@ public class GrafoAleatorioTest {
 		assertEquals(grafo.getAristas().size(), 0);		
 	}
 	
+	
 	@SuppressWarnings("unused")
 	@Test (expected = IllegalArgumentException.class)
 	public void testGrafoAleatorioVerticesNegativos() {
 		Grafo grafo = GrafoAleatorio.nuevoGrafoAleatorio(-7, 0);		
 	}
+	
 	
 	@SuppressWarnings("unused")
 	@Test (expected = IllegalArgumentException.class)

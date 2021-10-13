@@ -9,9 +9,9 @@ public class Arista {
 	
 	/**
 	 * Constructor de aristas entre 2 vertice
-	 * @param vertice inicial
-	 * @param vertice destino
-	 * @param peso o distancia entre vertices
+	 * @param Vertice inicial
+	 * @param Vertice destino
+	 * @param Peso o distancia entre vertices
 	 */
 	public Arista(int vertice_S, int vertice_T, float peso) {
 		this.vertice_S = vertice_S;
@@ -59,11 +59,4 @@ public class Arista {
 		}
 		return true;
 	}		
-	
-	
-	// toString, devuelve un String del tipo "(vertice1, vertice2, peso)"
-		public String toString() {
-			String sb = "(" + vertice_S + ", " + vertice_T + ", " + peso + ")";
-			return sb;
-		}
 }

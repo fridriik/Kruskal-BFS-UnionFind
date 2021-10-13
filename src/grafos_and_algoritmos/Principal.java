@@ -2,6 +2,11 @@ package grafos_and_algoritmos;
 
 public class Principal {
 	
+	
+	/**
+	 * Mide el tiempo que tarda el algoritmo de Kruskal con BFS
+	 * @return
+	 */
 	public static long medicionDeTiempoKruskalBFS() {
 		long tiempoInicio, tiempoFin, tiempo;
 		tiempoInicio = System.currentTimeMillis();
@@ -17,6 +22,10 @@ public class Principal {
 	}
 	
 	
+	/**
+	 * Mide el tiempo que tarda el algoritmo de Kruskal con estructura de datos Union-Find
+	 * @return
+	 */
 	public static long medicionDeTiempoKruskalUF() {
 		long tiempoInicio, tiempoFin, tiempo;
 		tiempoInicio = System.currentTimeMillis();
@@ -30,6 +39,7 @@ public class Principal {
 		tiempo = tiempoFin - tiempoInicio;
 		return tiempo;
 	}
+	
 	
 	public static void main (String[]args) {
 		StringBuilder sb = new StringBuilder();

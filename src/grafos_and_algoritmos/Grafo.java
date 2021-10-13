@@ -27,21 +27,29 @@ public class Grafo {
 	}
 	
 	
+	//Getters y setters de aristas y vecinos
 	public ArrayList<Arista> getAristas() {
 		return aristas;
 	}
 
-	@Override
-	public String toString() {
-		return "Grafo [vecinos=" + vecinos + ", aristas=" + aristas + "]";
-	}
-
-
+	
 	public ArrayList<Set<Integer>> getVecinos() {
 		return vecinos;
 	}
+	
+	
+	public Set<Integer> vecinos(int s){
+		verificarVertice(s, this);
+		return vecinos.get(s);
+	}
 
 
+	/**
+	 * Agrega la arista al grafo
+	 * @param Vertice origen
+	 * @param Vertice destino
+	 * @param Peso de la arista (Integer)
+	 */
 	public void agregarArista (int s, int t, int peso) {
 		verificarVertice(s, this);
 		verificarVertice(t, this);
@@ -54,6 +62,12 @@ public class Grafo {
 	}
 	
 	
+	/**
+	 * Agrega la arista al grafo
+	 * @param Vertice origen
+	 * @param Vertice destino
+	 * @param Peso de la arista (Float)
+	 */
 	public void agregarArista (int s, int t, float peso) {
 		verificarVertice(s, this);
 		verificarVertice(t, this);
@@ -70,6 +84,11 @@ public class Grafo {
 	}
 	
 	
+	/**
+	 * Elimina la arista del grafo
+	 * @param Vertice origen
+	 * @param Vertice destino
+	 */
 	public void eliminarArista(int s, int t) {
 		verificarVertice(s, this);
 		verificarVertice(t, this);
@@ -86,6 +105,11 @@ public class Grafo {
 	}
 	
 	
+	/**
+	 * Verifica si existe la arista
+	 * @param Vertice origen
+	 * @param Vertice destino
+	 */
 	public boolean existeArista (int s, int t) {
 		verificarVertice(s, this);
 		verificarVertice(t, this);
@@ -93,6 +117,9 @@ public class Grafo {
 	}
 	
 	
+	/**
+	 * Peso total de las aristas del grafo
+	 */
 	public int pesoTotal() {
 		int cont = 0;
 		for (Arista arista : aristas)
@@ -101,24 +128,30 @@ public class Grafo {
 	}
 
 	
-	public Set<Integer> vecinos(int s){
-		verificarVertice(s, this);
-		return vecinos.get(s);
-	}
-
-	
+	/**
+	 * Grado del vertice
+	 * @param Vertice a verificar
+	 * @return
+	 */
 	public int grado (int s){ 
 		return vecinos.get(s).size();
 	}
 	
 	
-	// Cantidad de vertices
+	/**
+	 * Tamanio del grafo
+	 * @return
+	 */
 	public int tamanio () {
 		return vecinos.size();
 	}
 	
 	
-	// Verifica que no se introduzcan loops
+	/**
+	 * Verifica si 2 vertices son distintos
+	 * @param Vertice origen
+	 * @param Vertice destino
+	 */
 	public void verificarDistintos(int s, int t) {
 		if (s == t) {
 			throw new IllegalArgumentException("No se permiten loops: (" + s + ", " + t + ")" );
@@ -126,7 +159,11 @@ public class Grafo {
 	}
 		
 	
-	// Verifica que sea un vertice valido
+	/**
+	 * Verifica si el vertice es valido
+	 * @param Vertice a verifcar
+	 * @param Grafo donde se verifica
+	 */
 	public void verificarVertice(int s, Grafo grafo) {
 		if (s < 0) {
 			throw new IllegalArgumentException("El vertice no puede ser negativo: " + s);

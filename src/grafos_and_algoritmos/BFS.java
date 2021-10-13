@@ -10,6 +10,11 @@ public class BFS {
 	private static boolean[] marcados;
 	
 	
+	/**
+	 * Verifica si el grafo ingresado es conexo
+	 * @param Grafo a verificar
+	 * @return
+	 */
 	public static boolean esConexo(Grafo g) {
 		if(g == null) {
 			throw new IllegalArgumentException("Se ingreso un grafo null");
@@ -24,6 +29,12 @@ public class BFS {
 	}
 
 
+	/**
+	 * Busca desde el vertice tomado como origen a cuantos vertices alcanza
+	 * @param Grafo en donde se busca
+	 * @param Vertice desde donde se verifica
+	 * @return
+	 */
 	public static Set<Integer> alcanzables(Grafo g, int origen) {
 		Set<Integer> ret = new HashSet<Integer>();		
 		inicializar(g, origen);
@@ -39,7 +50,21 @@ public class BFS {
 		return ret;
 	}
 
+	
+	/**
+	 * Metodo que busca si 2 vertices hacen circuito
+	 * @param Grafo donde se toman los vertices
+	 * @param Vertice tomado como origen para verificar el circuito
+	 * @param Vertice tomado como destino para verificar el circuito
+	 * @return
+	 */
+	public static boolean circuito(Grafo g , int origen ,int destino) {
+		Set<Integer> alcanzables =  BFS.alcanzables(g, origen);
+		return alcanzables.contains(destino);
+	}
 
+
+	//Metodo privado que utiliza alcanzables para agregar a los vecinos que no hayan sido agregados
 	private static void agregarVecinosPendientes(Grafo g, int i) {
 		for(int vertice : g.vecinos(i)) {
 			if(marcados[vertice] == false && L.contains(vertice) == false) {
@@ -49,12 +74,7 @@ public class BFS {
 	}
 	
 	
-	public static boolean circuito(Grafo g , int origen ,int destino) {
-		Set<Integer> alcanzables =  BFS.alcanzables(g, origen);
-		return alcanzables.contains(destino);
-	}
-
-
+	//Inicializa el grafo
 	private static void inicializar(Grafo g, int origen) {
 		L = new ArrayList<Integer>();	
 		L.add(origen);

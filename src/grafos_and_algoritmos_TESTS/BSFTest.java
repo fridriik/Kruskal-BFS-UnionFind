@@ -8,16 +8,19 @@ import grafos_and_algoritmos.Grafo;
 
 public class BSFTest {
 	
+	
 	@Test (expected = IllegalArgumentException.class)
 	public void testNull() {
 		BFS.esConexo(null);
 	}
+	
 	
 	@Test
 	public void vacioTest() {
 		Grafo g = new Grafo(0);
 		assertTrue(BFS.esConexo(g));
 	}
+	
 	
 	@Test
 	public void alcanzablesTest() {
@@ -28,12 +31,14 @@ public class BSFTest {
 		grafos_and_algoritmos_TESTS.Assert.iguales(esperados, alcanzables);
 	}
 	
+	
 	@Test
 	public void noConexoTest() {
 		
 		Grafo g = inicializarGrafo();
 		assertFalse(BFS.esConexo(g));		
 	}
+	
 	
 	@Test
 	public void conexoTest() {	

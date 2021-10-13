@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 public class Kruskal {		
 
+	
+	/**
+	 * Crea un arbol generador minimo usando el algoritmo de Kruskal con BFS
+	 * @param Grafo a probar 
+	 * @return
+	 */
 	public static Grafo kruskalBFS(Grafo g) {
 		if(!BFS.esConexo(g)) {
 			throw new IllegalArgumentException("El grafo tiene que ser conexo");
@@ -20,6 +26,11 @@ public class Kruskal {
 	}
 	
 	
+	/**
+	 * Crea un arbol generador minimo usando el algoritmo de Kruskal con estructura de datos Union-Find
+	 * @param Grafo a probar 
+	 * @return
+	 */
 	public static Grafo kruskalUF (Grafo g) {
 		UnionFind uf = new UnionFind(g.tamanio());
 		Grafo aux = new Grafo(g.tamanio());
@@ -36,6 +47,7 @@ public class Kruskal {
 	}
 		
 
+	//Metodo que utiliza KruskalBFS para seleccionar la arista de menor peso
 	private static Arista seleccionarMenorBFS(ArrayList<Arista> aristaList, Grafo g) {
 		Arista auxi = aristaList.get(0);
 		for (Arista arista : aristaList) {
@@ -48,6 +60,7 @@ public class Kruskal {
 	}
 	
 	
+	//Metodo que utiliza elegirArista para seleccionar la arista de menor peso
 	private static Arista seleccionarMenorUF(ArrayList<Arista> aristaList) {
 		Arista auxi = aristaList.get(0);
 		for (Arista arista : aristaList) {
@@ -58,6 +71,8 @@ public class Kruskal {
 		return auxi;
 	}
 	
+	
+	//Metodo que utiliza KruskalUF para elegir la arista y comenzar con el algoritmo
 	private static Arista elegirArista(ArrayList<Arista> aristaList, UnionFind uf) {
 		boolean flag = false;
 		Arista auxi = aristaList.get(0);
