@@ -14,7 +14,10 @@ public class GrafoAleatorio {
 	public static Grafo nuevoGrafoAleatorio(int vertices, int aristas) {
 		
 		if (vertices < 0 || aristas < 0) {
-			throw new IllegalArgumentException("Se ingresaron numeros negativos");
+			throw new IllegalArgumentException("Se ingresaron vertices y aristas negativas");
+		}
+		if(aristas > (vertices*(vertices - 1))/2) {
+			throw new IllegalArgumentException("Por teoria de grafos la cantidad maxima de aristas es n(n - 1)/2");
 		}
 		Grafo aux = new Grafo(vertices);
 		Random random = new Random();
