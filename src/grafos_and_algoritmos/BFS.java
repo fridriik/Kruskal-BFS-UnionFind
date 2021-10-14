@@ -11,25 +11,6 @@ public class BFS {
 	
 	
 	/**
-	 * Verifica si el grafo ingresado es conexo
-	 * @param Grafo a verificar
-	 * @return
-	 */
-	public static boolean esConexo(Grafo g) {
-		if(g == null) {
-			throw new IllegalArgumentException("Se ingreso un grafo null");
-		}
-		if(g.tamanio() == 0) {
-			return true;
-		}
-		if(alcanzables(g, 0).size() == g.tamanio()) {
-			return true;
-		}
-		return alcanzables(g, 0).size() == g.tamanio();
-	}
-
-
-	/**
 	 * Busca desde el vertice tomado como origen a cuantos vertices alcanza
 	 * @param Grafo en donde se busca
 	 * @param Vertice desde donde se verifica
@@ -48,6 +29,25 @@ public class BFS {
 			L.remove(0);
 		}
 		return ret;
+	}
+	
+	
+	/**
+	 * Verifica si el grafo ingresado es conexo
+	 * @param Grafo a verificar
+	 * @return
+	 */
+	public static boolean esConexo(Grafo g) {
+		if(g == null) {
+			throw new IllegalArgumentException("Se ingreso un grafo null");
+		}
+		if(g.tamanio() == 0) {
+			return true;
+		}
+		if(alcanzables(g, 0).size() == g.tamanio()) {
+			return true;
+		}
+		return alcanzables(g, 0).size() == g.tamanio();
 	}
 
 	

@@ -129,18 +129,16 @@ public class Grafo {
 
 	
 	/**
-	 * Grado del vertice
 	 * @param Vertice a verificar
-	 * @return
+	 * @return Grado del vertice
 	 */
-	public int grado (int s){ 
+	public int grado (int s) { 
 		return vecinos.get(s).size();
 	}
 	
 	
 	/**
-	 * Tamanio del grafo
-	 * @return
+	 * @return Tamanio del grafo
 	 */
 	public int tamanio () {
 		return vecinos.size();
@@ -152,7 +150,7 @@ public class Grafo {
 	 * @param Vertice origen
 	 * @param Vertice destino
 	 */
-	public void verificarDistintos(int s, int t) {
+	private void verificarDistintos(int s, int t) {
 		if (s == t) {
 			throw new IllegalArgumentException("No se permiten loops: (" + s + ", " + t + ")" );
 		}
@@ -164,7 +162,7 @@ public class Grafo {
 	 * @param Vertice a verifcar
 	 * @param Grafo donde se verifica
 	 */
-	public void verificarVertice(int s, Grafo grafo) {
+	private void verificarVertice(int s, Grafo grafo) {
 		if (s < 0) {
 			throw new IllegalArgumentException("El vertice no puede ser negativo: " + s);
 		}

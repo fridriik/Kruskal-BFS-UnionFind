@@ -11,7 +11,7 @@ public class Principal {
 		long tiempoInicio, tiempoFin, tiempo;
 		tiempoInicio = System.currentTimeMillis();
 		for (int i = 0; i < 50; i++) {
-			Grafo grafo = GrafoAleatorio.nuevoGrafoAleatorio(5, 10);
+			Grafo grafo = GrafoAleatorio.nuevoGrafoAleatorio(50, 1225);
 			for (int j = 0; j < 50; j++) {
 				Kruskal.kruskalBFS(grafo);
 			}

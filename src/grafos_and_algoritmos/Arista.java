@@ -20,7 +20,7 @@ public class Arista {
 	}
 	
 	
-	//Getters y set de peso
+	//Getters y setters de vertices y peso
 	public int getVertice_S() {
 		return vertice_S;
 	}
